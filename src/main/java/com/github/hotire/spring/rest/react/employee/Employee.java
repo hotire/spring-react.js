@@ -1,4 +1,4 @@
-package com.github.hotire.spring.rest.react;
+package com.github.hotire.spring.rest.react.employee;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

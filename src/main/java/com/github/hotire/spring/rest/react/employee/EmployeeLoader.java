@@ -1,4 +1,4 @@
-package com.github.hotire.spring.rest.react;
+package com.github.hotire.spring.rest.react.employee;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
