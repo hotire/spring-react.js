@@ -1,5 +1,12 @@
 # Spring-React.js
 
-### Reference 
+Reference : https://spring.io/guides/tutorials/react-and-spring-data-rest/
 
-https://spring.io/guides/tutorials/react-and-spring-data-rest/
+## Basic Features
+
+### Domain 
+
+- Employee
+
+
+
