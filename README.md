@@ -1,4 +1,4 @@
-# Spring-React.js
+# Spring-Rest-React.js
 
 Reference : https://spring.io/guides/tutorials/react-and-spring-data-rest/
 

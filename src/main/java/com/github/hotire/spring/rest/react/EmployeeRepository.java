@@ -1,4 +1,4 @@
-package com.github.hotire.spring.react;
+package com.github.hotire.spring.rest.react;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
