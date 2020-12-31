@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.4.1'
     id 'io.spring.dependency-management' version '1.0.10.RELEASE'
     id 'java'
+    id "com.moowork.node" version "1.2.0"
 }
 
 group = 'com.github.hotire'
@@ -31,4 +32,41 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+
+
+node {
+    version = '9.3.0'
+    npmVersion = '5.8.0'
+    download = true
+}
+
+task npmBuild(type: NpmTask) {
+    args = ['run', 'build']
+}
+
+task npmClean(type: Delete) {
+    delete 'dist'
+}
+
+npmBuild.dependsOn(npmInstall)
+
+// frontend build & copy to build dir
+task resourcesCopy(dependsOn: ':frontend:npmBuild') {
+    doLast {
+        // copy template
+        copy {
+            from '../frontend/dist/index.html'
+            into 'build/resources/main/templates'
+        }
+        // copy static
+        copy {
+            from '../frontend/dist/static'
+            into 'build/resources/main/static/static'
+        }
+    }
+}
+
+bootJar {
+    dependsOn 'resourcesCopy'
 }
